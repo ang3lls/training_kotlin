@@ -9,7 +9,7 @@ data class Customer (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     val name: String,
-    val idade: Long,
+    val idade: Int,
     val email: String,
     val cpf: String
 )

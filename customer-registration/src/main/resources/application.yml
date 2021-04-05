@@ -1,9 +1,11 @@
+server:
+  port: 9098
 spring:
   application:
-    name: desafio_planeta
+    name: customer-registration
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/desafio_planeta
+    url: jdbc:mysql://localhost:3306/api_customer_registation?allowPublicKeyRetrieval=true&sslMode=DISABLED
     username: root
     password: password
   jpa:

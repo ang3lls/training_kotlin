@@ -17,7 +17,7 @@ class CustomerServiceImpl(val customerRepository: CustomerRepository): CustomerS
         return this.customerRepository.findByIdOrNull(id)
     }
 
-    override fun findAll(): List<Customer>{
+    override fun findAll(start: Int, size: Int): List<Customer>{
         val pageable: PageRequest = PageRequest.of(start,size)
         return this.customerRepository.findAll(pageable).toList()
     }

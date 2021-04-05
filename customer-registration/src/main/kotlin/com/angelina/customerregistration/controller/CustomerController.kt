@@ -32,8 +32,13 @@ class CustomerController {
     }
 
     @GetMapping()
-    fun findAll(): List<Customer>{
-        return this.customerService.findAll()
+    fun findAll(@RequestParam(required = false, defaultValue = "0")start: Int,
+                @RequestParam(required = false, defaultValue = "3")size: Int) : ResponseEntity<List<Customer>>{
+
+        var listCustomer = this.customerService.findAll(start,size)
+        var status = if(listCustomer.size == 0) HttpStatus.NOT_FOUND else HttpStatus.OK
+
+        return ResponseEntity(listCustomer, status)
     }
 
 
